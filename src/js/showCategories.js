@@ -1,4 +1,5 @@
 import { markupCategories, markupNameButton } from './markupCategoriesFilter.js';
+import { cardMarkup } from './cardMarkup.js';
 
 const categoriesMenu = document.querySelector('.category__menu');
 const categoriesBtn = document.querySelector('#btn-open-category');
@@ -40,3 +41,20 @@ window.onclick = event => {
     }
   }
 };
+
+function onSearchNewsBtn(event) {
+  const currentButtonCategory = event.target.dataset.btn;
+  cardMarkup(currentButtonCategory);
+};
+
+function onSearchNewsMenu(event) {
+  const currentButtonCategory = event.target.dataset.btn;
+  const currentButtonValue = event.target.innerText;
+  cardMarkup(currentButtonCategory);
+
+  markupNameButton(decodeURIComponent(currentButtonValue));
+  categoriesMenu.classList.remove('is-open-categories');
+
+  arrowBtnCategories.classList.add('open-categories');
+  categoriesBtn.focus();
+}
