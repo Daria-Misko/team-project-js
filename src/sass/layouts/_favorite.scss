@@ -5,19 +5,81 @@
     
 .underfined___title {
     display: none;
-    }
+     }
 .underfined___title.visible {
     display: block;
-    }
      }
+}
+
+// .gallery {
+
+// @media screen and (min-width: 320px) {
+//     max-width: 320px;
+//     gap: 28px;
+//     }
+  
+// @media screen and (min-width: 768px) {
+//     max-width: 768px;
+//     gap: 30px;
+//     }
+
+// @media screen and (min-width: 1280px) {
+//     max-width: 1280px;
+//     gap: 30px;
+//     }
+// }
 
 .favorite-container {
-    .card__item--weather{
-        display: none;
-        }
-    .btn-add {
-        display: none;
-        }
+
+.card__list {
+    gap: 28px;
+@media screen and (min-width: 768px) {
+    gap: 30px;
     }
+
+@media screen and (min-width: 1280px) {
+    gap: 30px;
+    }
+
+}
+
+.card__item--weather{
+    display: none;
+    }
+.btn-add {
+    display: none;
+    }      
+        
+.card__item {
+    list-style: none;
+    }
+}
+
+.card__btn.btn-remove {
+    width: 168px;
+    position: absolute;
+    right: 8px;
+    bottom: 120px;
+    
+    @include tablet {
+    right: 8px;
+    bottom: 60px;
+    }
+
+    @include desktop {
+    right: 8px;
+    bottom: 12px;
+     }
+
+    } 
+.card__btn.btn-remove::after {
+    content: '';
+    display: flex;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/svg/dar_heart_svg.svg');
+    margin-left: 6px;
+    }   
+
 
   
