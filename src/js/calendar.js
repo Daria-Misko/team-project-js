@@ -72,6 +72,7 @@ const months = [
   'December',
 ];
 export const renderCalendar = number => {
+
   let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
     lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
     lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
@@ -163,6 +164,8 @@ export const renderCalendar = number => {
 };
 
 renderCalendar();
+
+
 let findUl = document.querySelector('.days');
 // inputDateValue = document.querySelector('.calendar-input').value;
 
