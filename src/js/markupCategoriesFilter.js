@@ -1,5 +1,5 @@
 import { getCategoryList } from './api/fetchApi.js';
-// import { divideArrNews } from 
+
 
 const categoriesList = document.querySelector('.buttons-list');
 const categoriesBtn = document.querySelector('#btn-open-category');
@@ -80,8 +80,3 @@ function divideArrNews(categories, count) {
 function encoded(string) {
     return encodeURIComponent(string);
 };
-
-// markupCategories(categoriesMenu);
-// markupNameButton();
-
-// console.log('HHHHHHHHHHHHHHHHHHHHHHHH');
