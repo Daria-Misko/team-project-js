@@ -1,17 +1,17 @@
 import { markupCategories, markupNameButton } from './markupCategoriesFilter.js';
 import { cardMarkup } from './cardMarkup.js';
 
-const categoriesMenu = document.querySelector('.category__menu');
-const categoriesBtn = document.querySelector('#btn-open-category');
 const categoriesList = document.querySelector('.buttons-list');
+const categoriesBtn = document.querySelector('#btn-open-category');
+const categoriesMenu = document.querySelector('.category__menu');
 const arrowBtnCategories = document.querySelector('.arrow-icon');
 
 markupCategories(categoriesMenu);
 markupNameButton();
 
+categoriesList.addEventListener('click', onSearchNewsBtn);
 categoriesBtn.addEventListener('click', onToggleCategoriesMenu);
 categoriesMenu.addEventListener('click', onSearchNewsMenu);
-categoriesList.addEventListener('click', onSearchNewsBtn);
 
 function onToggleCategoriesMenu() {
     const isMenuOpen = 
@@ -44,13 +44,14 @@ window.onclick = event => {
 
 function onSearchNewsBtn(event) {
   const currentButtonCategory = event.target.dataset.btn;
-  cardMarkup(currentButtonCategory);
+  // cardMarkup(currentButtonCategory);
 };
 
 function onSearchNewsMenu(event) {
   const currentButtonCategory = event.target.dataset.btn;
   const currentButtonValue = event.target.innerText;
-  cardMarkup(currentButtonCategory);
+  // cardMarkup(currentButtonCategory);
+ 
 
   markupNameButton(decodeURIComponent(currentButtonValue));
   categoriesMenu.classList.remove('is-open-categories');
@@ -58,3 +59,55 @@ function onSearchNewsMenu(event) {
   arrowBtnCategories.classList.add('open-categories');
   categoriesBtn.focus();
 }
+
+// const apiKey = '3HHtrx1v9QZUfdmskYGXIqIWRgxdBdcv';
+// const url = https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=${apiKey}
+
+// async function fetchNYTData() {
+//   const response = await fetch(`https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=${apiKey}`);
+//   const data = await response.json();
+//   if (data.status === 'OK') {
+//    const articles = data.results;
+//    return articles;
+//   } else {
+//     throw new Error(error.message);
+//   }
+// }
+
+// async function getMostPopularArticles() {
+//  const response = await fetch(`https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=${apiKey}`);
+//  const data = await response.json();
+//  const { results } = data;
+//  const resultArticles = []
+
+//  // console.log(results)
+
+//  const articles = results.map(({ title, url, published_date, abstract, section, id }) => {
+
+//   const article = {
+//   headline: title,
+//       web_url: url, 
+//       pub_date: published_date,
+//       lead_paragraph: abstract,
+//       news_desk: section, 
+//       // bigMobileImg: url,
+//       // smallMobileImg: url,
+//       // smallSquareImg: url,
+//       // bigSquareImg: url,
+//       id: id
+//   }
+
+//   resultArticles.push(article);
+//   } ); 
+//    // console.log(resultArticles);
+//  return resultArticles;
+
+// }
+
+// // getMostPopularArticles()
+
+// getMostPopularArticles().then(res => {
+//  const ulEl = document.querySelector('.cards__list');
+//  console.log(ulEl);
+//  ulEl.insertAdjacentHTML('beforeend', cardMarkup(res));
+// })
