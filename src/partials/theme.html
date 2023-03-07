@@ -1,0 +1,61 @@
+<body>
+    <div>
+        <div class="header__container container">
+        <!-- ховати в мобільніверсії а на десктопе показувати перемикач теми-->
+         <div class="theme theme--descktop">
+            <p class="theme-icon-text theme-icon-text-light theme__light">
+              Light
+            </p>
+            <svg
+              class="theme-icon theme-icon__light theme-icon-descktop"
+              width="21"
+              height="21"
+            >
+              <use href="./images/sprite.svg#sun"></use>
+            </svg>
+            <label class="switch">
+              <input type="checkbox" class="switch-checkbox" />
+              <span class="slider round"></span>
+            </label>
+            <svg
+              class="theme-icon theme-icon__dark theme-icon-descktop"
+              width="21"
+              height="21"
+            >
+              <use href="./images/sprite.svg#moon"></use>
+            </svg>
+            <p class="theme-icon-text theme-icon-text-dark theme__dark">Dark</p>
+          </div>
+
+    <!-- Кнопка відкриття мобільного меню -->
+
+    <button
+            class="menu-toggle js-open-menu mobile-btn-open"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="mobile-menu"
+            id="btn-open"
+          >
+            <svg class="icon" width="24" height="24">
+              <use href=""></use>
+            </svg>
+          </button>
+        </div>
+
+    <!-- для мобілки -->
+       <div class="theme">
+          <svg class="theme-icon theme-icon__light" width="21" height="21">
+            <use href="./sprite/symbol-defs.svg#sun"></use>
+          </svg>
+          <label class="switch">
+            <input type="checkbox" class="switch-checkbox" />
+            <span class="round slider"></span>
+          </label>
+          <svg class="theme-icon theme-icon__dark" width="21" height="21">
+            <use href="./sprite/symbol-defs.svg#moon"></use>
+          </svg>
+        </div>
+      </div>
+    </header>
+    <script src="./dark.js"></script>
+  </body>

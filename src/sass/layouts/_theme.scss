@@ -1,0 +1,272 @@
+/* для темної теми фон */
+:root body.darkMode {
+  --bg-color: #2e2e2e;
+  --text-color: #f4f4f4;
+
+  --switcher-dark-off: #f4f4f4;
+  --switcher-dark-on: #4440f7;
+}
+
+/* пероемикач */
+
+/* .search-wrapper {
+  margin-left: auto;
+  display: flex;
+} */
+.theme {
+  @media screen and (max-width: $pre_tablet) {
+  }
+
+  @media screen and (min-width: $pre_tablet) {
+  }
+
+  @media screen and (max-width: $mobile) {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    z-index: 6;
+    bottom: 18px;
+    opacity: 100%;
+    visibility: inherit;
+  }
+
+  @media screen and (min-width: $pre_desktop) {
+    gap: 12px;
+    width: 148px;
+    height: 24px;
+    margin: 0;
+  }
+}
+
+.theme--descktop {
+  position: static;
+
+  @media screen and (max-width: $pre_tablet) {
+    display: none;
+  }
+}
+
+.theme-icon-text {
+  @media screen and (max-width: $desktop) {
+    display: none;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+
+  &-light {
+    font-size: 18px;
+    line-height: 1.3;
+
+    color: #4b48db;
+  }
+  &-dark {
+    font-size: 18px;
+    line-height: 1.3;
+
+    color: #5f6775;
+  }
+}
+
+.theme-icon-descktop {
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.theme__dark {
+  font-family: 'Poppins';
+  font-size: 18px;
+  line-height: 24px;
+
+  color: #5f6775;
+
+  order: 2;
+  flex-grow: 0;
+}
+
+.theme__light {
+  font-family: 'Poppins';
+
+  font-size: 18px;
+  line-height: 24px;
+  color: #4b48db;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* мій перемикач */
+
+.switch {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+}
+
+.switch__checkbox {
+  display: none;
+}
+
+/* .wrapper-toggle {
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  margin-left: 0;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--switcher-moon-light);
+
+  transition: margin-left 1000ms ease-in;
+} */
+
+.toggle {
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+  background-color: var(--switcher-moon-light);
+}
+
+.switch__checkbox:checked + .wrapper-toggle .toggle {
+  background-color: #ffffff;
+
+  margin-left: auto;
+}
+
+.switch__checkbox:checked + .wrapper-toggle {
+  border-color: #ffffff;
+  background-color: var(--switcher-moon-light);
+}
+
+/*  Для мобільної версії*/
+
+/* body.darkMode {
+  .header {
+    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+  }
+
+  .theme__dark {
+    opacity: 1;
+  }
+
+  .js-menu-container {
+    background-color: var(--bg-color);
+  }
+
+  .mobile-btn-open .icon {
+    fill: var(--text-color);
+  }
+
+  .search {
+    border: 1px solid var(--text-color);
+    @media screen and (max-width: $pre_tablet) {
+      border: none;
+      &:hover {
+        border: 1px solid var(--text-color);
+      }
+    }
+
+    & input {
+      color: var(--white-color);
+    }
+  }
+
+  .search__btn[type='submit'] {
+    fill: var(--text-color);
+  }
+
+  .theme-icon-text-light {
+    color: var(--text-color);
+  }
+  .theme-icon-text-dark {
+    color: var(--switcher-dark-on);
+  }
+
+  .theme-icon__light {
+    fill: var(--switcher-off);
+  }
+
+  .theme-icon__dark {
+    fill:#4b48db;
+  } */
+
+/* Кнопка тогл */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 0.604701px solid#4b48db;
+
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 1px;
+  background-color: #4b48db;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4b48db;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4440f6;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+  background-color: #ffffff;
+}
+
+/* Кнопка тогл */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider.round {
+  background-color: #4b48db;
+  border: 0.604701px solid #ffffff;
+}
+
+.theme-icon {
+  margin: 0;
+}
+
+.theme-icon__light {
+  fill: #4b48db;
+}
+
+.theme-icon__dark {
+  fill: #5f6775;
+}
+
+input:checked + .theme.theme-icon__light {
+  fill: #5f6775;
+}
+
+input:checked + .theme.theme-icon__dark {
+  fill: #4b48db;
+}
