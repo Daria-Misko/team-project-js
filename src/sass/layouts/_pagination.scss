@@ -138,6 +138,14 @@
     align-items: center;
     column-gap: 2px;
     cursor: pointer;
+    &:not(:disabled) {
+      &:hover,
+      &:focus{
+        background-color:var(--components-color);
+        color:#F4F4F4 ;
+      }
+      
+    }
   }
 
   .buttons:hover {
@@ -157,14 +165,23 @@
 
   .isActivePage {
     color: #F4F4F4;
-    background: #4440F6;
+    background: var(--components-color);
+    &.buttons:hover,
+    &.buttons:focus{
+      background-color: #F4F4F4;
+      color: var(--components-color);
+    }
   }
+
 
   .isActivePage:hover {
     color: #F4F4F4;
     background: #4440F6;
     border-color: #4440F6;
   }
+
+
+
 
   .buttons.prew-btn:disabled {
     opacity: 0.3;
