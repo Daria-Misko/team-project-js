@@ -59,6 +59,13 @@
     cursor: pointer;
   }
 
+  .buttons:hover {
+    color: #F4F4F4;
+    background: #0ec3c9;
+    border: 1px solid #0ec3c9;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .buttons.prew-btn {
     width: 72px;
   }
@@ -70,6 +77,12 @@
   .isActivePage {
     color: #F4F4F4;
     background: #4440F6;
+  }
+
+  .isActivePage:hover {
+    color: #F4F4F4;
+    background: #4440F6;
+    border-color: #4440F6;
   }
 
   .buttons.prew-btn:disabled {
@@ -127,6 +140,13 @@
     cursor: pointer;
   }
 
+  .buttons:hover {
+    color: #F4F4F4;
+    background: #0ec3c9;
+    border: 1px solid #0ec3c9;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .buttons.prew-btn {
     width: 82px;
   }
@@ -140,21 +160,26 @@
     background: #4440F6;
   }
 
+  .isActivePage:hover {
+    color: #F4F4F4;
+    background: #4440F6;
+    border-color: #4440F6;
+  }
+
   .buttons.prew-btn:disabled {
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: default;
     border-color: gray;
   }
 
   .buttons.next-btn:disabled {
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: default;
     border-color: gray;
   }
 }
 .small-paginator-back-btn {
-  margin-right: 100px;
- 
+  margin-right: 100px; 
 }
 
 .small-paginator-back-btn, 
