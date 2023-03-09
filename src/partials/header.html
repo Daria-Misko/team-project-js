@@ -1,56 +1,181 @@
-<script type="module" src="./js/headerSearch.js"></script>
-<header class="main-header">
-    <div class="container header-main-nav">
-        <nav class="main-nav">
-            <a href="/src/index.html" class="logo link">
-                <span class="news-logo">News</span>
-            </a>
-
-            <ul class="site-nav list">
-                <li class="item">
-                    <a href="/src/index.html" class="link current">Home</a>
-                </li>
-                <li class="item">
-                    <a href="/src/favorite.html" class="link">Favorite</a>
-                </li>
-                <li class="item">
-                    <a href="/src/read.html" class="link">Read</a>
-                </li>
-            </ul>
-        </nav>
-        <form class="header-search-form" id="header-form-js">
-            <div class="header-search__field">
-                <input type="text" name="searchQuery" autocomplete="off" placeholder="Search" class="header-search__input" id="header-input-js" autofocus />
-                <button type="submit" class="header-search-btn" id="header-btn-js">
-                  <svg class="icon"><use xlink:href="images/icons.svg#icon-search"></use></svg>
-                </button>
-            </div>
-        </form>
-        <!-- =========================================================================================== -->
-        <div class="style-type">
-            <label for="switch-style" class="style-type__value">Light</label>
-            <input type="checkbox" id="switch-style" class="style-type__input" />
-            <label for="switch-style" class="style-type__label">Toggle</label>
-            <label for="switch-style" class="style-type__value">Dark</label>
-        </div>
-
-
-        <!-- MOBILE MENU -->
-        <button class="mobile-menu__open-btn js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg class="modal-menu__icon-open">
-            <use href="images/icons.svg#icon-burger"></use>
-          </svg>
-        </button>
-    </div>
-</header>
-
-
-
-
-<script>
-    let btnSearch = document.querySelector('#header-btn-js');
-
-    btnSearch.onclick = () => {
-        document.querySelector('#header-input-js').classList.add('active');
+.modal-menu__conteiner {
+    --padding: 16px;
+    position: fixed;
+    transform: translateX(200%);
+    top: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 13px 0;
+    background-color: var(--bg-color);
+    transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    >.container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: auto;
     }
-</script>
+    width: 100vw;
+    height: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+    &.is-open {
+        transform: translateX(0);
+    }
+}
+
+.modal-menu__close-btn {
+    position: absolute;
+    top: 32px;
+    right: 25px;
+    justify-content: flex-end;
+    border: none;
+    background-color: inherit;
+    font-size: 15px;
+}
+
+.modal-menu__icon-close {
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-menu__close-btn:focus,
+.modal-menu__close-btn:hover .modal-menu__icon-close {
+    fill: #2196f3;
+    cursor: pointer;
+}
+
+.modal-menu__top {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.modal-menu__top .logo {
+    padding-left: var(--padding);
+}
+
+.modal-menu__top .style-type {
+    margin-top: auto;
+    margin-left: var(--padding);
+    margin-bottom: 20px;
+}
+
+.modal-menu__nav {
+    margin-top: 56px;
+}
+
+.modal-menu__nav,
+.modal-menu__contacts-list,
+.modal-menu__icons {
+    list-style: none;
+}
+
+.modal-menu__nav-link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 var(--padding);
+    .icon {
+        margin-right: 14px;
+        font-size: 32px;
+    }
+    &:hover,
+    &.current {
+        background-color: var(--components-color);
+        color: var(--white-color);
+        .icon {
+            stroke: var(--white-color);
+        }
+    }
+}
+
+.modal-menu__nav-item {
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+.modal-menu__number {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    color: #2196f3;
+}
+
+.modal-menu__email {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    color: #757575;
+}
+
+.modal-menu__contact:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+.modal-menu__icon {
+    position: relative;
+    margin-right: 20px;
+    &:not(:last-child):after {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        height: 100%;
+        background-color: rgba(33, 33, 33, 0.2);
+        width: 1px;
+        right: -10px;
+    }
+}
+
+.modal-soc-menu__icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 64px;
+    list-style: none;
+}
+
+.modal-menu__link {
+    color: #2196f3;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+}
+
+// modal menu
+.modal-menu__icon-open {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu__open-btn {
+    border: none;
+    background-color: inherit;
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.mobile-menu__open-btn:focus,
+.mobile-menu__open-btn:hover .mobile-menu__icon-open {
+    fill: var(--components-color);
+    cursor: pointer;
+}
